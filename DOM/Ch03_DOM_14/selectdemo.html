@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select Demo</title>
+    </head>
+    <body>
+        <div>
+            <h2>Select - Demo</h2>
+            The HTML Select element represents a control that provide a menu options.
+            <br>
+            Each menu option is defined by an option element inside the select. Each option element 
+            should have a value containing data value to submit to the server when that option is 
+            selected. If no value attribute is included, the value defaults to the text contained inside 
+            the element.
+        </div>
+        <br>
+        <table>
+            <tr>
+                <td><label for="browser">Choose a browser:</label> </td>
+                <td>
+                    <select id="browser" name="browser">
+                        <option value="1">Microsoft Edge</option>
+                        <option value="2">Google Chrome</option>
+                        <option value="3">Mozilla Firefox</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="getSelected()" value="Get Selected Browser"></td>
+                <td><input type="button" onclick="setSelected()" value="Set Selected Browser"></td>
+            </tr>
+            <tr>
+                <td>Selected browser is: </td>
+                <td><input type="text" id="result"></td>
+            </tr>
+        </table>
+        <script src="selectdemo.js"></script>
+    </body>
+</html>

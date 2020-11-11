@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop</title>
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    For Loop - Demo 1
+                    <ul>
+                        <li>Print 1 to 10 (comma sepaterd as string and new line)</li>
+                        <li>Print table of value input by user</li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <input type="text" id="data" value="" readonly>                
+                        </div>
+                        <div class="col-md-2">
+                            <textarea id="txtData" rows="12" cols=5"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-control" for="tableDataValue">Enter Number to print table</label>
+                            <input type="number" class="form-control" id="tableDataValue" name="tableDataValue" placeholder="Enter Value">
+                            <textarea name="tableData" id="tableData"  class="form-control" rows="11" cols="3" ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="button" class="btn btn-primary" value="Print 1 to 10" onclick="print()">
+                    <input type="button" class="btn btn-primary" value="Print table" onclick="printTable()">
+                    <a class="btn btn-outline-primary" href="/ForLoop/index.html" >Back</a>
+                </div>
+            </div>
+        </div>
+        <script src="forloop_01.js"></script>
+    </body>
+</html>

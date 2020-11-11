@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Playing with radio button (option button)</title>
+    </head>
+    <body>
+        <h2>Playing with Radio Button (Option Button)</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Like to join a picnic:</td>
+                    <td>
+                        <label><input type="radio" id="resultYes" name="picnicResult" value="Yes" onchange="resultChange()" >Yes</label> 
+                        <label><input type="radio" id="resultNo" name="picnicResult"  value="No" onchange="resultChange()">No</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="getResult()"  value="Submit"></td>
+                    <td><input type="button" onclick="clearAll()" value="Clear"></td>
+                </tr>
+                <tr>
+                    <td>Selected choice:</td>
+                    <td><input type="text" id="answer" readonly /> </td>
+                </tr>
+            </table>
+            <p>
+                 Notes:
+                 <ul>
+                     <li>The Event interface represents an event which takes place in the DOM.</li>
+                     <li>The target property of the Event interface is a reference to the object onto which the event was dispatched.</li>
+                     <li>Reference URL: https://developer.mozilla.org/en-US/docs/Web/API/Event</li>
+                 </ul>
+                 <p>Remarks:
+                     Open console window to get details about event
+                 </p>
+            </p>
+        </form>
+        <script src="radioButtondemo.js"></script>
+    </body>
+</html>

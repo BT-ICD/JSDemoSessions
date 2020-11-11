@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+        <h1>Hello Javascript Demo </h1>
+        <h2>Chapter 01</h2>
+        <p>About script tag: To place Javascript code. Generally it should be placed at the bottom of page. Just becore closing of body tag.</p>
+        <p>Best practice to declare variable using let and const</p>
+        <p>parseInt Function used to convert to integer.</p>
+<script>
+    alert('Hello World ...');
+    window.alert('We will do it');
+    console.log('Hello Console ...');
+    console.log(12+2);
+    var productName;
+    console.log(productName);
+    var total =100;
+    console.log(total);
+    console.log(typeof total);
+
+    //variable declare using let
+    let isAvailable = true;
+    console.log(isAvailable);
+    console.log(typeof isAvailable);
+    //constant
+    const pi = 3.14;
+   // pi = 10; //Uncaught TypeError: Assignment to constant variable
+    console.log(pi);
+
+    var totalSeconds = 140;
+    var minutes = totalSeconds/60;
+    //parseInt - function used to convert into integer
+    minutes = parseInt(totalSeconds/60);
+    console.log('Minutes: '+ minutes);
+    var remainingSecond = totalSeconds%60;
+    console.log('Seconds: '+ remainingSecond);
+
+
+</script>
+<script src="ch01.js">
+
+</script>
+</body>
+
+</html>

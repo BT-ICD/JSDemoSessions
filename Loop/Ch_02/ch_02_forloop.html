@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    For Loop - Demo 2
+                    <ul>
+                        <li>Factors of a given number</li>
+                        <li>Determine that number is prime</li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                                <label  for="factorValueTextBox">Enter Value to find factors</label>
+                                <input type="number" class="form-control" id="factorValueTextBox" name="factorValueTextBox">
+
+                                <label for="factorsTextBox">Factors</label>
+                                <input type="text" class="form-control" id="factorsTextBox" name="factorsTextBox">
+
+                                <label for="totalFactorsTextBox">Total factors</label>
+                                <input type="number" class="form-control" id="totalFactorsTextBox" name="totalFactorsTextBox">
+                        </div>
+                        <div class="col-md-6">
+                                <label for="primeValueTextBox">Enter value to determine prime</label>
+                                <input type="number" class="form-control" id="primeValueTextBox" name="primeValueTextBox">
+                                <p id="isPrimeResult" class ="text-primary" >Is Prime: </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="button" class="btn btn-primary" value="Factors" onclick="factorClick()">
+                    <input type="button" class="btn btn-primary" value="Is Prime" onclick="isPrimeClick()">
+                    <a href="/ForLoop/index.html" class="btn btn-outline-primary">Home</a>
+                </div>
+            </div>
+        </div>
+        <script src="ch02_forloop.js"></script>
+    </body>
+  
+</html>

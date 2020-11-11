@@ -1,0 +1,1 @@
+alert('Hello world from ch01.js');

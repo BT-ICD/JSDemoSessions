@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>alert, prompt, confirm</title>
+    </head>
+    <body>
+        <h1>Functions to interact with user: </h1>
+        <ul>
+            <li>alert- alert(message)</li>
+            <li>prompt - result = prompt(title, [default]);</li>
+            <li>confirm - result = confirm(question);</li>
+        </ul>
+        <h2>alert</h2>
+        <p>It provides a message in a window to the user with OK button.
+            <button name="alertDemoButton1" type="button" onclick="alertDemo()">Alert Demo -1</button>
+            <button name="alertDemoButton2" type="button" onclick="alertDemoWithMessage('Hello JavaScript')" >Alert Demo - 2</button>
+        </p>
+        <h2>prompt</h2>
+        <p>It allows user to input string. Dialog contains two buttons OK and Cancel. When User press Cancel it return null.
+        <button name="promptButton" type="button" onclick="promptDemo()">Prompt</button>
+        </p>
+        <h2>confirm</h2>
+        <p>
+            It provides functionality to ask user a question with two buttons. Ok and Cancel
+            Return result as true if Ok is selected otherwise false
+            <button type="button" name="confirmButton" onclick="confirmDemo()">confirm demo</button>
+        </p>
+        <p>
+            Access Inner HTML  - 
+            The Document method getElementById() returns an Element object representing the element whose id property matches the specified string. 
+            var element = document.getElementById(id);
+            <button type="button" name="buttonInnerHTML" onclick="buttonInnerHTMLClick()">Get Inner HTML</button>
+        </p>
+        <div id='dv1' name="dv1">
+            Hello DIV - Inner HTML
+        </div>
+    <script src="ch02.js"></script>
+    </body>
+
+</html>

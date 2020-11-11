@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Array Demo - 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <p id='arrayContent1'>
+    
+                        </p>
+                    </div>
+                    <div class="row">
+                        <input type="button" class="btn btn-primary " value="Array Demo 1" onclick="arrayDemo1()">
+                        <input type="button" class="btn btn-primary ml-2" value="Loop over array (for loop)" onclick="loopDemo1()">
+                        <input type="button" class="btn btn-primary ml-2" value="Loop over array (forEach loop - 1)" onclick="loopDemo2()">
+                        <input type="button" class="btn btn-primary ml-2" value="Loop over array (forEach loop -2)" onclick="loopDemo3()">
+
+                    </div>
+                    <div class="row">
+                        <input type="button" class="btn btn-primary mt-2" value="Add new element" onclick="addNewElement()">
+                        <input type="button" class="btn btn-primary ml-2 mt-2" value="Find element (indexOf)" onclick="findElement()">
+                        <input type="button" class="btn btn-primary ml-2 mt-2" value="Remove item by index(splice)" onclick="removeElement()">
+                        <input type="button" class="btn btn-primary ml-2 mt-2" value="Remove item from begining(shift)" onclick="removeFirst()">
+                    </div>
+                    <div class="row">
+                        <input type="button" class="btn btn-primary mt-2" value="Copy array (slice)" onclick="copyArray()">
+                        <input type="button" class="btn btn-primary mt-2 ml-2" value="Sort" onclick="sortArray()">
+                        <input type="button" class="btn btn-primary mt-2 ml-2" value="is Array" onclick="checkIsArray()">
+                        <input type="button" class="btn btn-primary mt-2 ml-2" value="Reverse" onclick="reverseArray()">
+                    </div>
+                    <div class="row">
+                        <input type="button" class="btn btn-primary mt-2" value="Generate List" onclick="generateList()">
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <script src="ch_01.js"></script>
+    </body>
+</html>
