@@ -137,8 +137,12 @@ function filterArray(){
     console.log('initial product array ');
     console.log(products);
     //returns array which satisfies given condition
-    var result = products.filter((data)=> data.length>5);
+    //var result = products.filter((data)=> data.length>5);
+    var result = products.filter(filterValues);
     console.log('Result after filter: ',result);
+}
+function filterValues(data){
+    return (data.length>5)
 }
 function generateList(){
     let arrayContent1 = document.getElementById('arrayContent1'); 

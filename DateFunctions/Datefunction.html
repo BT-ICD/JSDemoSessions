@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        <title>Date Function Demo</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Date Function Example
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            Current Date
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" id="currentDate" size="70">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-1">
+                            Date
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="dd" size="10">
+                        </div>
+                        <div class="col-md-1">
+                            Month
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="mm" size="10">
+                        </div>
+                        <div class="col-md-2">
+                            Year
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="yyyy" size="10">
+                        </div>
+                    </div>
+                    <!-- Hour - Minutes - Seconds -->
+                    <div class="row mt-2">
+                        <div class="col-md-1">
+                            Hour
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="hours" size="10">
+                        </div>
+                        <div class="col-md-1">
+                            Minutes
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="minutes" size="10">
+                        </div>
+                        <div class="col-md-2">
+                            Seconds
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="seconds" size="10">
+                        </div>
+                    </div>
+                    <!-- MilliSeconds - Time --  Day (Weekday as number) -->
+                    <div class="row mt-2">
+                        <div class="col-md-1">
+                            Milliseconds
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="milliseconds" size="10">
+                        </div>
+                        <div class="col-md-1">
+                            Time
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="time" size="10">milliseconds since January 1, 1970
+                        </div>
+                        <div class="col-md-2">
+                            Weekday
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" id="weekday" size="10">
+                        </div>
+                    </div>
+                    <!-- toLocaleString -  -  -->
+                    <div class="row mt-2">
+                        <div class="col-md-2">
+                            toLocaleString
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" id="toLocaleString" size="60">
+                        </div>
+                    </div>
+                    <!-- toLocaleDateString -  -  -->
+                    <div class="row mt-2">
+                        <div class="col-md-2">
+                            toLocaleDateString
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" id="toLocaleDateString" size="60">
+                        </div>
+                    </div>
+                    <!-- toLocaleTimeString -  -  -->
+                    <div class="row mt-2">
+                        <div class="col-md-2">
+                            toLocaleTimeString
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" id="toLocaleTimeString" size="60">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="card-footer">
+                    <input type="button" class="btn btn-primary" value="Date Functions" onclick="getDate()">
+                </div>
+            </div>
+        </div>
+        <script src="detefunctions.js"></script>
+    </body>
+</html>
