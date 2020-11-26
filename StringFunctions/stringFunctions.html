@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Functions Demo</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    String Function Examples
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                           Input String: <input type="text" id="inputString" value="We will do it"> 
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="button" class="btn btn-primary" value="charAt" onclick="charAtDemo()">
+                    <input type="button" class="btn btn-primary" value="length" onclick="lengthDemo()">
+                    <input type="button" class="btn btn-primary" value="toLowerCase" onclick="lowerCaseDemo()">
+                    <input type="button" class="btn btn-primary" value="toUpperCase" onclick="upperCaseDemo()">
+                </div>
+            </div>
+            <!-- Index of -  -->
+            <div class="card">
+                <div class="card-header">
+                    String Function Examples - indexOf
+                    Returns the index within the calling String object of the first occurrence of searchValue, or -1 if not found.
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                           Input String: <input type="text" id="mainString1" value="We will do it">
+                           Search String:  <input type="text" id="searchString1" value="We will do it">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="button" class="btn btn-primary" value="indexOf" onclick="indexOfDemo()">
+                </div>
+            </div>
+            <!-- substring -  -->
+            <div class="card">
+                <div class="card-header">
+                    String Function Examples - subString
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                           Input String: <input type="text" id="mainString" value="We will do it">
+                           Starting Position:  <input type="number" id="startPosition" value="3">
+                           End Position:<input type="number" id="endPosition" value="7">
+                           Result: <input type="text" id="resultSubstring" value="">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="button" class="btn btn-primary" value="substring" onclick="substringDemo()">
+                </div>
+            </div>
+
+
+        </div>
+        <script src="stringfunctions.js"></script>
+    </body>
+</html>
