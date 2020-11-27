@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Set - Collection Demo</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Set - Collection Demo 
+                    <p>Set objects are collections of values. You can iterate through the elements of a set in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- To display list of elements -->
+                        <div class="col-md-6">
+                            <div id="printSet">
+                                    Set Elements:
+                            </div>
+                        </div>
+                        <!-- Operation on collection To add/remove/search elements -->
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    Country: <input type="text" id="nameTextBox">
+                                </div>
+                                <div class="col-md-1">
+                                    <input type="button" value="Add" onclick="addNew()" >
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- Print -->
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input type="button" value="Iterate" onclick="print()">
+                                    <input type="button" value="Clear" onclick="clearValues()"> 
+                                    <input type="button" value="Has Value" onclick="hasValue()"> 
+                                    <input type="button" value="Delete" onclick="deleteValue()"> 
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+        <script src="setdemo.js"></script>
+    </body>
+</html>
