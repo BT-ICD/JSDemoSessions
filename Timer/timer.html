@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Timer demo</title>
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-        <meta name="description" content="Demo page to learn about timer">
-        <meta name="keywords" content="JavaScript">
-        <meta name="author" content="Bhavin">
-    </head>
-    <body>
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    Timer demo
-                    <ul>
-                        <li>setTimeout() - The setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires.</li>
-                        <li>setInterval() - The setInterval() method, repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. It returns an interval ID which uniquely identifies the interval, so you can remove it later by calling clearInterval(). </li>
-                        <li>clearInterval()- The clearInterval() method cancels a timer, repeating action which was previously established by a call to setInterval().</li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                       <div class="row">
-                           <label>Current Date with time</label>
-                           <input type="text" id="dateTextbox" size="60" >
-                       </div> 
 
+<head>
+    <title>Timer demo</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <meta name="description" content="Demo page to learn about timer">
+    <meta name="keywords" content="JavaScript">
+    <meta name="author" content="Bhavin">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Timer demo
+                <ul>
+                    <li>setTimeout() - The setTimeout() method sets a timer which executes a function or specified piece
+                        of code once the timer expires.</li>
+                    <li>setInterval() - The setInterval() method, repeatedly calls a function or executes a code
+                        snippet, with a fixed time delay between each call. It returns an interval ID which uniquely
+                        identifies the interval, so you can remove it later by calling clearInterval(). </li>
+                    <li>clearInterval()- The clearInterval() method cancels a timer, repeating action which was
+                        previously established by a call to setInterval().</li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <label>Current Date with time</label>
+                    <input type="text" class="ml-2" id="dateTextbox" size="60">
                 </div>
-                <div class="card-footer">
-                    <input type="button" class="btn btn-primary" value="Start Timer" onclick="startTimer()" >
-                    <input type="button" class="btn btn-primary ml-2" value="Stop Timer" onclick="stopTimer()">
+                <div class="row mt-2">
+                    <label>Current Date using setTimeOut </label>
+                    <input type="text" class="ml-2" id="dateTextbox1" size="60">
                 </div>
+
+            </div>
+            <div class="card-footer">
+                <input type="button" class="btn btn-primary" value="Start Timer" onclick="startTimer()">
+                <input type="button" class="btn btn-primary ml-2" value="Stop Timer" onclick="stopTimer()">
+                <input type="button" class="btn btn-primary ml-2" value="Datetime after 5 seconds (setTimeout())"
+                    onclick="setTimeoutDemo()">
             </div>
         </div>
-        <script src="timerdemo.js" ></script>
-    </body>
+    </div>
+    <script src="timerdemo.js"></script>
+</body>
+
 </html>
