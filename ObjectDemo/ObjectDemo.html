@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects in JavaScript</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="card">
+            <div class="card-header">
+                <h1>Object in JavaScript</h1>
+                <span>In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.</span>
+                <hr>
+                <p>Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <input type="button" value="Person Object" onclick="objectDemo1()">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="button" value="Iterate Properties for..in loops" onclick="objectDemo2()">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="button" value="Iterate Properties Object.keys(o)" onclick="objectDemo3()">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="button" value="Iterate Properties Object.getOwnPropertyNames(o)" onclick="objectDemo4()">
+                    </div>
+                </div>
+                <!-- To create object using Constructor Function -->
+                <div class="row mt-2">
+                  <div class="col-md-12">
+                    <p>To create object using a constructor function 
+                        <input type="button" value="Create Object" onclick="objectWithConstructorFunction()">
+                    </p>
+                  </div>
+                </div>
+                <!-- To create object using Object.create method -->
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p>
+                            To create object using the Object.create method. 
+                            <input type="button" value="Create Object" onclick="objectUsingCreateMethod()">
+                        </p>
+                    </div>
+                </div>
+                <!-- Addition member and function to existing object -->
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p>
+                            To add properties and function to existing object (Dynamic nature of JavaScript Object)
+                            <input type="button" value="Add Properties/Method" onclick="addPropertiesToObject()">
+                        </p>
+                    </div>
+                </div>
+                <!-- Object.assign() to crete new object from existing object -->
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <p>
+                            Create new object from existing - Object.assign() to crete new object from existing object
+                            <input type="button" value="Create new object" onclick="createNewObjectFromExisting()">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+
+            </div>
+        </div>
+        <script src="ObjectDemo.js"></script>
+    </body>
+</html>
