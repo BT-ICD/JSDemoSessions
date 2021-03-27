@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Screen Capture Demo</title>
+        <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./screencapture.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    Screen Capture Demo
+                    <div class="row">
+                        Learning Reference: https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>This example shows you the contents of the selected part of your display.
+                        Click the Start Capture button to begin.</p>
+                        
+                        <p><button class="btn btn-primary" id="start">Start Capture</button>&nbsp;
+                        <button class="btn btn-warning" id="stop">Stop Capture</button></p>&nbsp;
+                        <p><button class="btn btn-info" id="captureScreen">Capture Image</button> </p>
+                        <video id="video" autoplay></video>
+                        <div class="row">
+                            <canvas #canvas id="canvas" width="640" height="480"></canvas>
+                        </div>
+                        <br>
+                        
+                        <strong>Log:</strong>
+                        <br>
+                        <pre id="log"></pre>
+                        
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            Image
+            <div class="row">
+                <img id="img" src="" height="400">
+            </div>
+        </div>
+        <script src="./ScreenCapture.js"></script>
+    </body>    
+</html>

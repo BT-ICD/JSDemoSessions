@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Qyery Selector method demo</title>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>querySelector method:</h1>
+                    <ul>
+                        <li>The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</li>
+                        <li>Learning Reference: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector</li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <label class="col-md-2">First Name</label>
+                        <div class="col-md-4">
+                            <input type="text" id="firstName" name="firstName">
+                        </div>    
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="button" value="querySelectorDemo" onclick="querySelectorDemo()">
+                </div>
+            </div>
+        </div>
+        <script src="dom_querySelector.js"></script>
+    </body>
+</html>
