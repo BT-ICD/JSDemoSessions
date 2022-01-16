@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Simple Interest - Lab</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <form>
-        <fieldset>
-            <legend>Simple Interest Calculator</legend>
-            <div>
-                <label for="">Principal</label>
-                <input type="number" id="principal"  name= "principal" placeholder="Principal Amount " />
-                <label>Rate of interest</label>
-                <input type="number" id="rate" placeholder="Rate of interest" />
-                <label>Years</label>
-                <input type="number" id="years" placeholder="Number of years" />
-            </div>
-            <hr>
-            <div>
-                <input type="button" onclick="getInterest()" value="Calculate Interest" />
-                <input type="reset" value="Clear all">
-            </div>
-            <hr>
-            <div>
-                <label>Simple interest</label>
-                <input type="number" id="interest" readonly />
-            </div>
-            <div>
-                <label>Amount</label>
-                <input type="number" id="amount" readonly />
-            </div>
-        </fieldset>
+      <fieldset>
+        <legend>Simple Interest Calculator</legend>
+        <div>
+          <label for="">Principal</label>
+          <input type="number" id="principal" name="principal" placeholder="Principal Amount " />
+          <label>Rate of interest</label>
+          <input type="number" id="rate" placeholder="Rate of interest" />
+          <label>Years</label>
+          <input type="number" id="years" placeholder="Number of years" />
+        </div>
+        <hr />
+        <div>
+          <input type="button" onclick="getInterest()" value= "Calculate Interest"/>
+          <input type="reset" value="Clear all" />
+        </div>
+        <hr />
+        <div>
+          <label>Simple interest</label>
+          <input type="number" id="interest" readonly />
+        </div>
+        <div>
+          <label>Amount</label>
+          <input type="number" id="amount" readonly />
+        </div>
+      </fieldset>
     </form>
-    <script src="Sinterest.js">
-
-    </script>
-</body>
-
+    <script src="Sinterest.js"></script>
+  </body>
 </html>
