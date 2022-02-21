@@ -15,16 +15,37 @@
                     </ul>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <label class="col-md-2">First Name</label>
-                        <div class="col-md-4">
-                            <input type="text" id="firstName" name="firstName">
-                        </div>    
+                    <div class="row col-md-12" id="studentName">
+                        <div class="row col-md-12">
+                            <label class="col-md-2">First Name</label>
+                            <div class="col-md-4">
+                                <input type="text" id="firstName" name="firstName">
+                            </div>    
+                        </div>
+                        <div class="row col-md-12">
+                            <label class="col-md-2">Middle Name</label>
+                            <div class="col-md-4">
+                                <input type="text" id="middleName" name="middleName">
+                            </div>    
+                        </div>
+                        <div class="row col-md-12">
+                            <label class="col-md-2">Last Name</label>
+                            <div class="col-md-4">
+                                <input type="text" id="lastName" name="lastName">
+                            </div>    
+                        </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <input type="button" value="querySelectorDemo" onclick="querySelectorDemo()">
+                <div>
+                    <input type="checkbox"> One
+                    <input type="checkbox"> Two
+                    <input type="checkbox"> Three
                 </div>
+                <div class="card-footer">
+                    <button type="button" value="querySelectorDemo" onclick="clearAll()">Submit</button>
+                    <button type="button" value="querySelectorDemo" onclick="checkAll()">Check All</button>
+                </div>
+                
             </div>
         </div>
         <script src="dom_querySelector.js"></script>
