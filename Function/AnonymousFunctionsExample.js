@@ -1,8 +1,16 @@
-///https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions
+/**
+ * 
+ * Learning References:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+ * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions
+ */
 
 let txtDemo = document.getElementById('txtDemo');
 let txtDemoArrow = document.getElementById('txtDemoArrow');
 let txtDemoArrowRestrictNumbers = document.getElementById('txtDemoArrowRestrictNumbers');
+let btnFunctionExpressionExample = document.getElementById('btnFunctionExpressionExample');
+
+btnFunctionExpressionExample.addEventListener('click', getArea)
 //Example of anonymous function
 txtDemo.addEventListener('keydown', function(event){
     console.log(event);
@@ -26,3 +34,12 @@ txtDemoArrowRestrictNumbers.addEventListener('keydown',(event)=>{
     }
     //if(e.key)
 });
+
+/**
+ * Function Expression
+ */
+const square = function(number){return number*number}
+function getArea(){
+    let result = square(2);
+    alert(result);
+}
