@@ -15,6 +15,10 @@ let btnArr10= document.getElementById('btnArr10');
 let btnArr11= document.getElementById('btnArr11');
 let btnArr12= document.getElementById('btnArr12');
 let btnArr13= document.getElementById('btnArr13');
+let btnArr14= document.getElementById('btnArr14');
+let btnArr15= document.getElementById('btnArr15');
+let btnArr16= document.getElementById('btnArr16');
+
 
 btnArr1.addEventListener('click', ()=>{
     const shopping = ['bread', 'milk', 'cheese', 'chocolates', 'noodles'];
@@ -171,3 +175,38 @@ btnArr3.addEventListener('click',()=>{
         console.log(countrieStr);
         console.log(countrieStr1);
     });
+
+    /**
+     * splice - to add new element at a particular position
+     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+     */
+     btnArr15.addEventListener('click',()=>{
+        const countries = ["India","Japan","USA","Canada", "France"] 
+        console.log(countries);
+        console.log(countries.length);
+        countries.splice(1,0,'Australia');
+        console.log(countries );
+        console.log(countries.length);
+
+     });
+     /**
+      * slice - to create a copy of an array use slice() method
+      * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+      */
+      btnArr16.addEventListener('click', ()=>{
+        const countries = ["India","Japan","USA","Canada", "France"] 
+        console.log(countries);
+        //To get all the elements
+        const c1 = countries.slice();
+        console.log(c1);
+        //To get elements from 1 to all the remaining elements of an array
+        const c2 = countries.slice(1);
+        console.log(c2);
+        //To get elements from 1 to3 
+        const c3 = countries.slice(1,3);
+        console.log(c3);
+        //To get last two elements 
+        const c4 = countries.slice(-2);
+        console.log(c4);
+        
+      });
