@@ -4,12 +4,23 @@
  */
 let divContainer = document.getElementById('divContainer');
 let txtName = document.getElementById('txtName');
+let txtSearch = document.getElementById('txtSearch');
+let btnSearch = document.getElementById('btnSearch');
+let btnClearSearch = document.getElementById('btnClearSearch');
 let btnAdd = document.getElementById('btnAdd');
 let contacts=[];
+
 btnAdd.addEventListener('click',()=>{
     let contactName = txtName.value;
     addNewContact(contactName);
 });
+
+btnSearch.addEventListener('click',()=>{
+    let searchName = txtSearch.value;
+    searchContacts(searchName);
+});
+
+btnClearSearch.addEventListener('click', clearSearch);
 
 function addNewContact(contactName){
     let divToAdd = document.createElement('div');
@@ -25,7 +36,7 @@ function addNewContact(contactName){
     spanTag.classList.add("col-md-4");
     let buttonToAdd = document.createElement('button');
     buttonToAdd.setAttribute('id','btn'+contacts.length);
-    buttonToAdd.classList.add("col-md-4");
+    buttonToAdd.classList.add("col-md-2");
     buttonToAdd.classList.add("btn");
     buttonToAdd.classList.add("btn-secondary");
     buttonToAdd.innerText='Remove';
@@ -49,4 +60,26 @@ function removeContact(e){
     // console.log(position);
     contacts.splice(position,1);
     console.log(contacts);
+}
+function searchContacts(startsWith ){
+    let nodes =divContainer.getElementsByTagName('span');
+    let i;
+    for(i=0;i<nodes.length;i++){
+        let spanTag =nodes[i];
+         
+        if(spanTag.innerText.startsWith(startsWith)){
+            spanTag.className='col-md-4 bg-warning text-dark';
+        }
+        else{
+            spanTag.className='col-md-4';
+        }
+    }
+}
+function clearSearch(){
+    let nodes =divContainer.getElementsByTagName('span');
+    let i;
+    for(i=0;i<nodes.length;i++){
+        let spanTag =nodes[i];
+        spanTag.className='col-md-4';
+    }
 }
