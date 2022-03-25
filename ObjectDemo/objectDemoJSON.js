@@ -1,10 +1,14 @@
 let btnObjEx1 = document.getElementById('btnObjEx1');
 let btnObjEx2 = document.getElementById('btnObjEx2');
 let btnObjEx3 = document.getElementById('btnObjEx3');
+let btnObjEx4 = document.getElementById('btnObjEx4');
+
+
 
 btnObjEx1.addEventListener('click',objectExample1);
 btnObjEx2.addEventListener('click',objectExample2);
 btnObjEx3.addEventListener('click',objectExample3)
+btnObjEx4.addEventListener('click',objectExample4)
 /**
  * Create object using object constructor
  * The Object constructor creates an object wrapper for the given value.
@@ -101,4 +105,41 @@ function objectExample3(){
             console.log(`${property}: ${student[property]}`);
         }
     }
+}
+/**
+ * Various options to iterate over properties of an object
+ * 
+ */
+function objectExample4(){
+    let car1 = new Car('Maruti','Alto',2020);
+    Car.prototype.color = 'red';
+    car1.print = printCar
+    console.log(car1);
+    car1.print();
+
+    for(const property in car1){
+        //This will render property of car as well as properties belongs to prototype
+        console.log(property);
+    }
+    //This method returns an array with all own (not in the prorotype chain) enumerable properties names ("keys") of an object car1
+    console.log(Object.keys(car1));
+
+    //This method returns an array containint all own proeprties names (enumerable or not) of an object car1
+    console.log(Object.getOwnPropertyNames(car1));
+
+}
+function printCar(){
+    let result = `Car details make: ${this.make} , model: ${this.model}, year: ${this.year} `;
+    console.log(result);
+}
+/**
+ * Constructor Function to create Car object
+ * @param {*} make 
+ * @param {*} model 
+ * @param {*} year 
+ */
+function Car(make, model, year){
+this.make = make;
+this.model = model;
+this.year = year;
 }

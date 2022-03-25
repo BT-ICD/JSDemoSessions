@@ -27,11 +27,23 @@ function objectDemo2() {
     console.log(result);
 }
 
-// Object.keys(o) - This method returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object o.
+/**
+ * Object.keys(o) - This method returns an array with all the own (not in the prototype chain) enumerable properties' names 
+ * ("keys") of an object o. 
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+ */
+// 
 function objectDemo3() {
     console.log(Object.keys(person));
 }
-// The Object.getOwnPropertyNames() method returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly in a given object.
+/**
+ * The Object.getOwnPropertyNames() method returns an array of all properties
+ * (including non-enumerable properties except for those which use Symbol) found directly in a given object. 
+ * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames
+ * 
+ */
+// 
+// 
 function objectDemo4(){
 console.log(Object.getOwnPropertyNames(person));
 }
@@ -41,7 +53,7 @@ function objectWithConstructorFunction(){
     console.log(myCar);
    console.log( myCar.isCurrentYear());
 }
-//Function to create object
+//Function to create object - Constructor function
 function Car(make, model, year){
     this.make  = make;
     this.model= model;
@@ -76,10 +88,63 @@ function addPropertiesToObject(){
  product.isAvailable = false;
  console.log(product);
 }
+/**
+ * To create a copy of an object
+ * Arguments:
+ * 1. The target object — what to apply the sources' properties to, which is returned after it is modified.
+ * 2. The source object(s) — objects containing the properties you want to apply.
+ * Return: The target object.
+ * The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+ */
 function createNewObjectFromExisting(){
     let p = Object.assign({}, product);
     console.log('Initial p is :',p);
     p.name ='modified name';
     console.log('product ', product);
     console.log('p ',p);
+    var result = (p===product)
+    console.log(result);
+
+}
+/**
+ * You can add a property to a previously defined object type by using the prototype property. 
+ * This defines a property that is shared by all objects of the specified type, rather than by just one instance of the object. 
+ */
+function addPropertiesToObjectDemo1(){
+    let car1 = new Car('first make','first model',2020);
+    car1.seater = 4; //available to only object car1
+    let car2 = new Car('second make','second model',2021);
+    Car.prototype.color=null; //available to all car objects under prototype object
+    console.log(car1);
+    console.log(car2);
+
+    console.log(Object.getOwnPropertyNames(car1));
+    console.log(Object.getOwnPropertyNames(car2));
+    console.log(Object.keys(car1));
+    console.log(Object.keys(car2));
+}
+/***
+ * Object assignmet is by reference.
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+ */
+function objectAssignmentByRefExample(){
+    let car1 = new Car('Maruti','Alto',1980);
+    let car2 = car1;
+    console.log(car1);
+    console.log(car2);
+    car2.model='Fronti';
+    console.log(car1);
+    console.log(car2);
+    let result = car1===car2;
+    console.log(result);
+
+    let car3 = Object.assign({}, car1);
+    console.log(car3);
+    car3.make='Toyoto';
+    console.log(car3);
+    console.log(car1);
+
+    result = car1===car3;
+    console.log(result)
 }
