@@ -2,13 +2,21 @@ let btnObjEx1 = document.getElementById('btnObjEx1');
 let btnObjEx2 = document.getElementById('btnObjEx2');
 let btnObjEx3 = document.getElementById('btnObjEx3');
 let btnObjEx4 = document.getElementById('btnObjEx4');
+let btnObjEx5 = document.getElementById('btnObjEx5');
+let btnObjEx6 = document.getElementById('btnObjEx6');
+let btnObjEx7 = document.getElementById('btnObjEx7');
 
 
 
 btnObjEx1.addEventListener('click',objectExample1);
 btnObjEx2.addEventListener('click',objectExample2);
 btnObjEx3.addEventListener('click',objectExample3)
-btnObjEx4.addEventListener('click',objectExample4)
+btnObjEx4.addEventListener('click',objectExample4);
+btnObjEx5.addEventListener('click',objectExample5);
+btnObjEx6.addEventListener('click',objectExample6);
+btnObjEx7.addEventListener('click',objectExample7);
+
+
 /**
  * Create object using object constructor
  * The Object constructor creates an object wrapper for the given value.
@@ -142,4 +150,82 @@ function Car(make, model, year){
 this.make = make;
 this.model = model;
 this.year = year;
+}
+
+/**
+ * Using this for object reference
+ * JavaScript has a special keyword, this, that you can use within a method to refer to the current object
+ * The this refers to the object that it is in.
+ * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#using_this_for_object_references
+ */
+function objectExample5(){
+    const Manager = {
+        name:'Rajesh',
+        age:27,
+        job:"Software Engineer"
+    }
+
+    const Intern = {
+        name:'Manan',
+        age:21,
+        job:"Software Engineer Intern"
+    }
+
+    Manager.sayHi= sayHi;
+    Intern.sayHi= sayHi;
+    Manager.sayHi();
+    Intern.sayHi();
+
+}
+function sayHi(){
+    console.log(`Hello, my name is ${this.name}`);
+    console.log(this);
+}
+/**
+ * To remove properties of an object
+ * You can remove a non-inherited property by using the delete operator.
+ * Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#deleting_properties
+ */
+function objectExample6(){
+    const myObj = new Object();
+    myObj.a=5;
+    myObj.b=12;
+    console.log(myObj);
+    console.log('a' in myObj); //To determine that property exist in myObj (Object)
+    delete myObj.a;
+    console.log('After deleting property b');
+    console.log(myObj);
+    console.log('a' in myObj); //To determine that property exist in myObj (Object)
+
+}
+/**
+ * To implement getter/setter
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#defining_getters_and_setters
+ */
+function objectExample7(){
+    let d1 = disance;
+    d1.feet=5;
+    d1.inch=10;
+    d1.printData() ;
+}
+const disance={
+    i:0,
+    f:0,
+    get inch(){
+        return this.i;
+    },
+    set inch(value){
+        this.i =value;
+    },
+    get feet(){
+        return this.f;
+    },
+    set feet(value){
+        this.f=value;
+    },
+    printData: function(){
+        let result  =`Feet: ${this.f} and Inche: ${this.i}`;
+        console.log(result);
+    }
+
 }
