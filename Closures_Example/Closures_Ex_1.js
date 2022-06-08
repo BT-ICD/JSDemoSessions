@@ -54,6 +54,7 @@ btnEx3.addEventListener('click',btn3OnClick );
 function btn3OnClick(){
     console.log(add5(2));   //7
     console.log(add10(2));  //12
+    console.log(makeAdder(2)(20));
 }
 /**
  * Example 4
