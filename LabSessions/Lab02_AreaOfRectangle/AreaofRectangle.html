@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <title>Area of rectangle</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Area of a rectangle</h1>
+        </div>
+        <div class="row">
+            <h3>Area = length*width</h3>
+        </div>
+        <div class="row">
+            <h3>Perimeter = 2*(length+width)</h3>
+        </div>
+        <div class="row">
+            <div class="col">
+                Length
+            </div>
+            <div class="col">
+                <input type="text" id="txtLength" placeholder="Enter length" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Width
+            </div>
+            <div class="col">
+                <input type="text" id="txtWidth" placeholder="Enter width" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Area
+            </div>
+            <div class="col">
+                <input type="text" id="txtArea"  readonly >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Perimeter
+            </div>
+            <div class="col">
+                <input type="text" id="txtPerimeter"  readonly >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="btnCalculate" class="btn btn-primary">Calculate</button>
+            </div>
+            <div class="col">
+                <button id="btnClear" class="btn btn-primary">Clear</button>
+            </div>
+        </div>
+    </div>
+    <script src="./AreaofRectangle.js"></script>
+</body>
+</html>
