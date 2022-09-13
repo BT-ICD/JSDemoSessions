@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <title>About Hoisting</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Hoisting: A problem with scatterd vars</h1>
+            <p>Reference: JavaScript Patterns - Stoyan Stefanov </p>
+            <p>Chapter 2: Essentials</p>
+        </div>
+        <div class="row">
+            <p>
+                JavaScript enables you to have multiple var statements anywhere in a function, and
+                they all act as if the variables were declared at the top of the function. <span class="text-primary"> This behavior is
+                known as hoisting. </span>
+            </p>
+            <p>
+                This can lead to logical errors when you use a variable and then you
+                declare it further in the function. For JavaScript, as long as a variable is in the same
+                scope (same function), it’s considered declared, even when it’s used before the var
+                declaration.
+            </p>
+        </div>
+    </div>
+    <script src="./hoisting_example1.js"></script>
+</body>
+</html>
