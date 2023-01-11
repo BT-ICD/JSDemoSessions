@@ -6,6 +6,9 @@ function displayResult(){
         result.value="Pass";
         console.log("Pass");
     }
+    else{
+        result.value="Fail";
+    }
     console.log("Thank you!");
 
 }
