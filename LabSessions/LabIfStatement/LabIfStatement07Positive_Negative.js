@@ -13,6 +13,16 @@ function displayResult(){
             result.value ="Number is negative";
         }
     }
+// Using separate independent if statement
+// if(num==0)  {
+//     result.value ="Number is zero";
+// }
+// if(num>0){
+//     result.value ="Number is positive";
+// }
+// if(num<0){
+//     result.value ="Number is negative";
+// }
 
 // //Using else if
 // if(num==0){
