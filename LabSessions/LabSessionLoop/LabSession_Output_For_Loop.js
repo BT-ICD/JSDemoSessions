@@ -36,3 +36,24 @@ function outputexample4(){
         console.log(data)
     }
 }
+function outputexample5(){
+    let i,j;
+    let count =0
+    for(i=1;i<=4;i++){
+        for(j=1;j<=3;j++){
+            count++;
+        }
+    }
+    console.log(count);
+}
+function outputexample6(){
+    let i,j;
+    let count =0
+    for(i=1;i<=4;i++){
+            count++;
+    }
+    for(j=1;j<=3;j++){
+        count++;
+    }
+    console.log(count);
+}
