@@ -29,7 +29,7 @@ function outputexample4(){
     let i,j;
     let data='';
     for(i=1;i<=4;i++){
-        data=''
+        data='';
         for(j=1;j<=i;j++){
             data=data+' ' + j;    
         }
