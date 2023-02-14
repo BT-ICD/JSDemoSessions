@@ -70,7 +70,29 @@ function sumOfDigits(){
        sum+=rem
     }
     txtResult.value = sum;
-
-    
+}
       
+function countEvenOddAndZeros(){
+    let rem,even=0,odd=0,zero=0;
+    //debugger;
+    let num= +document.getElementById('txtNum1').value;
+    let txtEven = document.getElementById('txtEven');
+    let txtOdd = document.getElementById('txtOdd');
+    let txtZero = document.getElementById('txtZero');
+    while(num>0){
+       rem = num%10;
+       num= Math.floor(num/10);
+       if(rem==0){
+            zero++;
+       }
+       else if(rem%2==0) {
+            even++;
+       }
+       else{
+            odd++;
+       }
+    }
+    txtEven.value = even;
+    txtOdd.value = odd;
+    txtZero.value = zero;
 }
