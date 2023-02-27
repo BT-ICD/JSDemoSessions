@@ -18,4 +18,15 @@ else if (trimEnd.checked){
 else{
     txtResult.value= content.trim();
 }
+// let data = "      We will do it      "
+// let ans1 = data.trimStart();
+// console.log(ans1);
+// console.log(ans1.length);
+// let ans2 = data.trimEnd();
+// console.log(ans2);
+// console.log(ans2.length);
+// let ans3 = data.trim();
+// console.log(ans3);
+// console.log(ans3.length);
+
 }
