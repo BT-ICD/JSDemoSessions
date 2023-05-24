@@ -16,8 +16,11 @@ function fun1(){
 
 
 btnEx1.addEventListener('click',ex1);
+
 btnEx2.addEventListener('click',ex2);
+
 btnEx3.addEventListener('click',ex3);
+
 btnEx4.addEventListener('click',ex4);
 
 function ex1(){

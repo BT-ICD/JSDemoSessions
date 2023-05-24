@@ -8,6 +8,18 @@ let product = {
     name:'Dettol',
 }
 
+let p1 = {
+    id:101,
+    name:'Dettol',
+    rate:10,
+    addPrice: function(addValue){
+        this.rate= this.rate+addValue;
+    }
+}
+console.log(p1);
+p1.addPrice(20);
+console.log(p1);
+
 function objectDemo1() {
     console.log(person);
     console.log('Ways to access member/property');
