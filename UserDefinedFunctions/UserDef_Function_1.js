@@ -5,6 +5,16 @@ let btnEx4 = document.getElementById('btnEx4');
 let btnEx5 = document.getElementById('btnEx5');
 let btnEx6 = document.getElementById('btnEx6');
 
+let btn1 =  document.getElementById('btn1');
+
+btn1.addEventListener('click', fun1);
+function fun1(){
+    console.log(this);
+    console.log(this.value);
+    this.value="Hello Button";
+}
+
+
 btnEx1.addEventListener('click',ex1);
 btnEx2.addEventListener('click',ex2);
 btnEx3.addEventListener('click',ex3);
@@ -83,4 +93,10 @@ btnEx6.addEventListener('click', ex6);
 function ex6(){
     let answer = area(10,5);
     console.log(answer);
+}
+function clickEvent(e){
+    console.log(e);
+    console.log(e.srcElement);
+    console.log(e.srcElement.id);
+    e.srcElement.value ="Changed ....";
 }
