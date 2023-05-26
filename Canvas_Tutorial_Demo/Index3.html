@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>Drag and Drop</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+            background-image: url("../ImageEdit/SteveJobs_1.jpg");
+            background-position: center;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row col-md-12">
+            <div class="col">
+                <label for="mark01"><input type="radio" id="mark01" name="selection" value="01">01</label>
+                <label for="mark02"><input type="radio" id="mark02" name="selection" value="02">02</label>
+                <label for="mark03"><input type="radio" id="mark03" name="selection"value="03">03</label>
+                <label for="freehand"><input type="radio" id="freehand" name="selection" value="draw">Draw</label>
+            </div>
+        </div>
+        <!-- Canvas -->
+        <div class="row col-md-12 mt-2" id="divContainer">
+            <canvas id="canvas" height="300" width="300">
+                <img src="../ImageEdit/SteveJobs_1.jpg" alt="Image" height="300">
+            </canvas>
+        </div>
+        <div class="row col-md-12 mt-2">
+            <div class="col">
+                <button class="btn btn-primary" id="btnSaveImage" >Save Image</button>
+            </div>
+        </div>    
+    </div>
+    <script src="Index3.js"></script>
+</body>
+</html>
