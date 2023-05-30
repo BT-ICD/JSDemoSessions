@@ -12,6 +12,7 @@ const freehand = document.getElementById('freehand');
 const mark01 = document.getElementById('mark01');
 const mark02 = document.getElementById('mark02');
 const mark03 = document.getElementById('mark03');
+const eraser = document.getElementById('eraser');
 
 btnSaveImage.addEventListener('click', saveImage);
 canvas.onmousemove = (event) => onMouseMove(event);
@@ -73,6 +74,16 @@ function onMouseMove(event) {
             let y = event.clientY - bounding.top;
             ctx.fillStyle = "rgb(255,0,0)";
             ctx.fillRect(x, y, 2, 2)
+        }
+    }
+    else if (eraser.checked){
+        if (event.buttons == 1) {
+            const ctx = canvas.getContext('2d');
+            const bounding = canvas.getBoundingClientRect();
+            let x = event.clientX - bounding.left;
+            let y = event.clientY - bounding.top;
+            //ctx.fillStyle = "rgb(255,0,0)";
+            ctx.clearRect(x, y, 2, 2);
         }
     }
 }
