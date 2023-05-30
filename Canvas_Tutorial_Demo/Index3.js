@@ -14,9 +14,19 @@ const mark02 = document.getElementById('mark02');
 const mark03 = document.getElementById('mark03');
 const eraser = document.getElementById('eraser');
 
+const marksData=[];
 btnSaveImage.addEventListener('click', saveImage);
 canvas.onmousemove = (event) => onMouseMove(event);
 canvas.onmousedown=(event)=>onMouseDown(event);
+
+/**
+ * Function to create marks object
+ */
+function MarksDetail(mark,markObj, id){
+    this.mark = mark;
+    this.markObj= markObj;
+    this.id  = id;
+}
 function onMouseDown(event){
     if(event.buttons==1){
         if(mark01.checked){
@@ -52,17 +62,28 @@ function onImageClick(event, ele){
     // console.log(ele);
     event.target.remove();
     event.preventDefault();
+    let position = marksData.findIndex((data)=> data.id ===ele.id);
+    marksData.splice(position,1);
+    console.clear();
+    console.log(marksData);
+    renderTableRows();
 }
 function addElementAtPos(left,top){
     ele = document.createElement('img')
     ele.setAttribute('src','../Images/One.png')
     ele.setAttribute('height','15')
     ele.setAttribute('style',' z-index: 1')
+    ele.setAttribute('id', marksData.length);
     divContainer.appendChild(ele);
     ele.style.position = 'absolute'
     ele.style.top = top+'px';
     ele.style.left = left+'px';
     ele.onclick =(event) =>onImageClick(event, ele);
+    let mark= new MarksDetail(1,ele, marksData.length)
+    marksData.push(mark);
+    renderTableRows();
+    
+    console.log(marksData);
 }
 function onMouseMove(event) {
     if(freehand.checked ){
@@ -100,4 +121,17 @@ function saveImage() {
                 link.download = "content.png";
                 link.click();
     });
+}
+function renderTableRows(){
+    const tbody = document.getElementById('tbody');
+    while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.lastChild);
+      }
+    for(i=0;i<marksData.length;i++){
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        tr.innerHTML='1';
+        tr.appendChild(td);
+        tbody.appendChild(tr)
+    }
 }
