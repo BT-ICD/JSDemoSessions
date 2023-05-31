@@ -20,9 +20,9 @@
     <div class="container">
         <div class="row col-md-12">
             <div class="col">
-                <label for="mark01"><input type="radio" id="mark01" name="selection" value="01">01</label>
-                <label for="mark02"><input type="radio" id="mark02" name="selection" value="02">02</label>
-                <label for="mark03"><input type="radio" id="mark03" name="selection"value="03">03</label>
+                <label for="mark01"><input type="radio" id="mark01" name="selection" value="01"><img src="../Images/001.png" alt="001" draggable="false"> </label>
+                <label for="mark02"><input type="radio" id="mark02" name="selection" value="02"><img src="../Images/002.png" alt="002" draggable="false"></label>
+                <label for="mark03"><input type="radio" id="mark03" name="selection"value="03"><img src="../Images/003.png" alt="003" draggable="false"></label>
                 <label for="freehand"><input type="radio" id="freehand" name="selection" value="draw">Draw</label>
                 <label for="eraser"><input type="radio" id="eraser" name="selection" value="eraser">Eraser</label>
             </div>
@@ -34,8 +34,11 @@
             </canvas>
         </div>
         <div class="row col-md-12 mt-2">
-            <div class="col">
+            <div class="col-md-2">
                 <button class="btn btn-primary" id="btnSaveImage" >Save Image</button>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-primary" id="btnZoomIn" >Zoom</button>
             </div>
         </div>    
     </div>
@@ -44,10 +47,11 @@
             <thead>
                 <tr>
                     <th>Marks</th>
+                    <th>Created On</th>
+                    <th>Deleted On</th>
                 </tr>
             </thead>
             <tbody id = "tbody">
-                
             </tbody>
         </table>
     </div>

@@ -13,6 +13,8 @@ const mark01 = document.getElementById('mark01');
 const mark02 = document.getElementById('mark02');
 const mark03 = document.getElementById('mark03');
 const eraser = document.getElementById('eraser');
+const btnZoomIn = document.getElementById('btnZoomIn');
+btnZoomIn.addEventListener('click',zoomIn);
 
 const marksData=[];
 btnSaveImage.addEventListener('click', saveImage);
@@ -26,16 +28,17 @@ function MarksDetail(mark,markObj, id){
     this.mark = mark;
     this.markObj= markObj;
     this.id  = id;
+    this.isDeleted=false;
+    this.createdOn  = Date().toLocaleString();
+    this.deletedOn= '';
 }
 function onMouseDown(event){
     if(event.buttons==1){
+        const ctx = canvas.getContext('2d');
+        const bounding = canvas.getBoundingClientRect();
+        let x = event.clientX - bounding.left;
+        let y = event.clientY - bounding.top;
         if(mark01.checked){
-            const ctx = canvas.getContext('2d');
-            const bounding = canvas.getBoundingClientRect();
-            
-            let x = event.clientX - bounding.left;
-            let y = event.clientY - bounding.top;
-            
             //console.log(event);
             // const img = new Image(15,15);
             // img.src='../Images/One.png';
@@ -43,43 +46,55 @@ function onMouseDown(event){
             // img.onload=()=>{
             //     ctx.drawImage(img,x,y);
             // };
-            
-            addElementAtPos(x,y);
-            
+            addElementAtPos(x,y,'../Images/001.png',1);
         }
         else if (mark02.checked){
-
+            addElementAtPos(x,y,'../Images/002.png',2);
         }
         else if(mark03.checked){
-
+            addElementAtPos(x,y,'../Images/003.png',3);
         }
     }
     
 }
 function onImageClick(event, ele){
-    // console.log('remove image');
-    // console.log(event);
-    // console.log(ele);
+    
     event.target.remove();
     event.preventDefault();
-    let position = marksData.findIndex((data)=> data.id ===ele.id);
-    marksData.splice(position,1);
-    console.clear();
-    console.log(marksData);
+    
+    
+    
+    let position = marksData.findIndex((data)=> data.id ==event.target.id);
+    
+    console.log(position);
+    if(position>-1){
+        marksData[position].isDeleted = true;
+        marksData[position].deletedOn = Date().toLocaleString();
+    }
+        //marksData.splice(position,1);
     renderTableRows();
 }
-function addElementAtPos(left,top){
+function findIndexOfElement(data,i, id){
+    console.log(data.id, id, data.id==id);
+    if(data.id ==id){
+        return true
+    }
+    return false;
+}
+function addElementAtPos(left,top, selectedImageName, selectedMark){
     ele = document.createElement('img')
-    ele.setAttribute('src','../Images/One.png')
+    //ele.setAttribute('src','../Images/One.png');
+    ele.setAttribute('src',selectedImageName);
     ele.setAttribute('height','15')
     ele.setAttribute('style',' z-index: 1')
     ele.setAttribute('id', marksData.length);
+    ele.setAttribute('draggable', false);
     divContainer.appendChild(ele);
     ele.style.position = 'absolute'
     ele.style.top = top+'px';
     ele.style.left = left+'px';
     ele.onclick =(event) =>onImageClick(event, ele);
-    let mark= new MarksDetail(1,ele, marksData.length)
+    let mark= new MarksDetail(selectedMark,ele, marksData.length)
     marksData.push(mark);
     renderTableRows();
     
@@ -129,9 +144,23 @@ function renderTableRows(){
       }
     for(i=0;i<marksData.length;i++){
         let tr = document.createElement('tr');
-        let td = document.createElement('td');
-        tr.innerHTML='1';
-        tr.appendChild(td);
+        let tdmarks = document.createElement('td');
+        tdmarks.innerHTML=marksData[i].mark+'';
+        
+        tdCreatedOn = document.createElement('td');
+        tdCreatedOn.innerHTML=marksData[i].createdOn+'';
+       
+        tddeletedOn = document.createElement('td');
+        tddeletedOn.innerHTML=marksData[i].deletedOn+'';
+        tr.appendChild(tdmarks);
+        tr.appendChild(tdCreatedOn);
+        tr.appendChild(tddeletedOn);
+        
         tbody.appendChild(tr)
     }
+}
+function zoomIn(){
+    const ctx = canvas.getContext('2d');
+    ctx.scale(2,2);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
 }
