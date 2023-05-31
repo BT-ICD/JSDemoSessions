@@ -24,13 +24,15 @@ canvas.onmousedown=(event)=>onMouseDown(event);
 /**
  * Function to create marks object
  */
-function MarksDetail(mark,markObj, id){
+function MarksDetail(mark,markObj, id, left, top){
     this.mark = mark;
     this.markObj= markObj;
     this.id  = id;
     this.isDeleted=false;
     this.createdOn  = Date().toLocaleString();
     this.deletedOn= '';
+    this.left=left;
+    this.top = top
 }
 function onMouseDown(event){
     if(event.buttons==1){
@@ -61,11 +63,7 @@ function onImageClick(event, ele){
     
     event.target.remove();
     event.preventDefault();
-    
-    
-    
     let position = marksData.findIndex((data)=> data.id ==event.target.id);
-    
     console.log(position);
     if(position>-1){
         marksData[position].isDeleted = true;
@@ -73,6 +71,8 @@ function onImageClick(event, ele){
     }
         //marksData.splice(position,1);
     renderTableRows();
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(marksData[position].left-10, marksData[position].top+5, 15, 15)
 }
 function findIndexOfElement(data,i, id){
     console.log(data.id, id, data.id==id);
@@ -82,6 +82,12 @@ function findIndexOfElement(data,i, id){
     return false;
 }
 function addElementAtPos(left,top, selectedImageName, selectedMark){
+    const ctx = canvas.getContext('2d');
+    let img = document.getElementById('img001');
+    
+    
+    
+    ctx.drawImage(img,left-10,top+5,10,10);
     ele = document.createElement('img')
     //ele.setAttribute('src','../Images/One.png');
     ele.setAttribute('src',selectedImageName);
@@ -94,9 +100,11 @@ function addElementAtPos(left,top, selectedImageName, selectedMark){
     ele.style.top = top+'px';
     ele.style.left = left+'px';
     ele.onclick =(event) =>onImageClick(event, ele);
-    let mark= new MarksDetail(selectedMark,ele, marksData.length)
+    let mark= new MarksDetail(selectedMark,ele, marksData.length, left,top)
     marksData.push(mark);
     renderTableRows();
+
+
     
     console.log(marksData);
 }
@@ -160,7 +168,11 @@ function renderTableRows(){
     }
 }
 function zoomIn(){
-    const ctx = canvas.getContext('2d');
-    ctx.scale(2,2);
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    // const ctx = canvas.getContext('2d');
+    // ctx.scale(2,2);
+    // ctx.setTransform(1, 0, 0, 1, 0, 0);
+    //canvas.style.transform = scale(1.5);
+    canvas.classList.replace('canvas1','canvas2');
 }
+
+// To do: To draw image when user click on save image - to draw marks which are not deleted at a particular location
