@@ -38,7 +38,7 @@ function onMouseDown(event){
     if(event.buttons==1){
         const ctx = canvas.getContext('2d');
         const bounding = canvas.getBoundingClientRect();
-        let x = event.clientX - bounding.left;
+        let x = event.clientX - bounding.left+5;
         let y = event.clientY - bounding.top;
         if(mark01.checked){
             //console.log(event);
@@ -72,7 +72,7 @@ function onImageClick(event, ele){
         //marksData.splice(position,1);
     renderTableRows();
     const ctx = canvas.getContext('2d');
-    ctx.clearRect(marksData[position].left-10, marksData[position].top+5, 15, 15)
+    ctx.clearRect(marksData[position].left-10, marksData[position].top+5, 20, 20)
 }
 function findIndexOfElement(data,i, id){
     console.log(data.id, id, data.id==id);
@@ -83,11 +83,9 @@ function findIndexOfElement(data,i, id){
 }
 function addElementAtPos(left,top, selectedImageName, selectedMark){
     const ctx = canvas.getContext('2d');
-    let img = document.getElementById('img001');
-    
-    
-    
-    ctx.drawImage(img,left-10,top+5,10,10);
+    // let img = document.getElementById('img001');
+    // ctx.drawImage(img,left-10,top+5,10,10);
+
     ele = document.createElement('img')
     //ele.setAttribute('src','../Images/One.png');
     ele.setAttribute('src',selectedImageName);
@@ -117,7 +115,7 @@ function onMouseMove(event) {
             let x = event.clientX - bounding.left;
             let y = event.clientY - bounding.top;
             ctx.fillStyle = "rgb(255,0,0)";
-            ctx.fillRect(x, y, 2, 2)
+            ctx.fillRect(x, y, 4, 4)
         }
     }
     else if (eraser.checked){
@@ -127,7 +125,7 @@ function onMouseMove(event) {
             let x = event.clientX - bounding.left;
             let y = event.clientY - bounding.top;
             //ctx.fillStyle = "rgb(255,0,0)";
-            ctx.clearRect(x, y, 2, 2);
+            ctx.clearRect(x, y, 4, 4);
         }
     }
 }
@@ -135,6 +133,7 @@ function saveImage() {
     
     let divElement = document.getElementById('divContainer');
     //    createImageFromDiv(divElement);
+    drawMarksOnImage();
     html2canvas(canvas).then(
             function (canvas) {
                 // Convert the canvas to a data URL
@@ -144,6 +143,16 @@ function saveImage() {
                 link.download = "content.png";
                 link.click();
     });
+}
+function drawMarksOnImage(){
+    let i;
+    const ctx = canvas.getContext('2d');    
+    for(i=0;i<marksData.length;i++){
+        if(marksData[i].isDeleted==false){
+            let img = marksData[i].markObj;
+            ctx.drawImage(img,marksData[i].left-15,marksData[i].top,14,14);
+        }
+    }
 }
 function renderTableRows(){
     const tbody = document.getElementById('tbody');

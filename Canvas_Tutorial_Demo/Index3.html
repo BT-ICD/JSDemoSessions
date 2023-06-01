@@ -36,12 +36,32 @@
                 <label for="eraser"><input type="radio" id="eraser" name="selection" value="eraser">Eraser</label>
             </div>
         </div>
+        <!-- Table and Canvas -->
+        <div class="row col-md-12">
         <!-- Canvas -->
-        <div class="row col-md-12 mt-2" id="divContainer">
-            <canvas id="canvas" height="300" width="300" class="canvas1">
-                <img src="../ImageEdit/SteveJobs_1.jpg" alt="Image" height="300">
-            </canvas>
+            <div class="row col-md-6 mt-2" id="divContainer">
+                <canvas id="canvas" height="300" width="300" class="canvas1">
+                    <img src="../ImageEdit/SteveJobs_1.jpg" alt="Image" height="300">
+                </canvas>
+            </div>
+            <!-- Log Table -->
+            <div class="col-md-6">
+                <div class="row col-md-12" >
+                    <table class="table table-sm table-bordered " >
+                        <thead>
+                            <tr>
+                                <th>Marks</th>
+                                <th>Created On</th>
+                                <th>Deleted On</th>
+                            </tr>
+                        </thead>
+                        <tbody id = "tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
+
         <div class="row col-md-12 mt-2">
             <div class="col-md-2">
                 <button class="btn btn-primary" id="btnSaveImage" >Save Image</button>
@@ -50,19 +70,6 @@
                 <button class="btn btn-primary" id="btnZoomIn" >Zoom</button>
             </div>
         </div>    
-    </div>
-    <div class="row col-md-12" >
-        <table class="table table-sm table-bordered " >
-            <thead>
-                <tr>
-                    <th>Marks</th>
-                    <th>Created On</th>
-                    <th>Deleted On</th>
-                </tr>
-            </thead>
-            <tbody id = "tbody">
-            </tbody>
-        </table>
     </div>
     <script src="Index3.js"></script>
 </body>
