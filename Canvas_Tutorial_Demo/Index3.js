@@ -115,7 +115,7 @@ function onMouseMove(event) {
             let x = event.clientX - bounding.left;
             let y = event.clientY - bounding.top;
             ctx.fillStyle = "rgb(255,0,0)";
-            ctx.fillRect(x, y, 4, 4)
+            ctx.fillRect(x, y, 2, 2)
         }
     }
     else if (eraser.checked){
@@ -125,7 +125,7 @@ function onMouseMove(event) {
             let x = event.clientX - bounding.left;
             let y = event.clientY - bounding.top;
             //ctx.fillStyle = "rgb(255,0,0)";
-            ctx.clearRect(x, y, 4, 4);
+            ctx.clearRect(x, y, 2, 2);
         }
     }
 }
