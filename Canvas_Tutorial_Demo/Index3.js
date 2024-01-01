@@ -14,13 +14,15 @@ const mark02 = document.getElementById('mark02');
 const mark03 = document.getElementById('mark03');
 const eraser = document.getElementById('eraser');
 const btnZoomIn = document.getElementById('btnZoomIn');
+const btnDrawImage = document.getElementById('btnDrawImage');
 btnZoomIn.addEventListener('click',zoomIn);
 
 const marksData=[];
 btnSaveImage.addEventListener('click', saveImage);
+btnDrawImage.addEventListener('click', drawStaticImage);
 canvas.onmousemove = (event) => onMouseMove(event);
 canvas.onmousedown=(event)=>onMouseDown(event);
-
+canvas.onclick= (event)=>onCanvasClick(event);
 /**
  * Function to create marks object
  */
@@ -33,6 +35,19 @@ function MarksDetail(mark,markObj, id, left, top){
     this.deletedOn= '';
     this.left=left;
     this.top = top
+}
+function onCanvasClick(event){
+   // console.log(event);
+   const bounding = canvas.getBoundingClientRect();
+        let x = event.clientX - bounding.left;
+        let y = event.clientY - bounding.top;
+        console.log(x,y);
+        if(x>=0 && x<=20 && y>=0 && y<=20){
+            console.log('clicked on image');
+        }
+        else{
+            console.log('clicked outside image');
+        }
 }
 function onMouseDown(event){
     if(event.buttons==1){
@@ -184,4 +199,14 @@ function zoomIn(){
     canvas.classList.replace('canvas1','canvas2');
 }
 
-// To do: To draw image when user click on save image - to draw marks which are not deleted at a particular location
+function drawStaticImage(){
+    const ctx = canvas.getContext('2d');
+    // const bounding = canvas.getBoundingClientRect();
+    // let x = event.clientX - bounding.left;
+    // let y = event.clientY - bounding.top;
+    let img1 = document.getElementById("img001");
+    
+    ctx.drawImage(img1,0,0,20,20);
+    let img2 = document.getElementById("img002");
+    ctx.drawImage(img2,5,5,20,20);
+}
