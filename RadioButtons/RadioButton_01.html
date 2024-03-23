@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Playing with Radio Button</h1>
+        </div>
+        <!-- Gender -->
+        <div class="row">
+            <h2>Gender</h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="radio"  name="Gender" id="radioMale" value="Male"/>
+                <label for="radioMale">Male</label>
+            </div>
+            <div class="col">
+                <input type="radio"  name="Gender" id="radioFemale" value="Female" checked/>
+                <label for="radioFemale">Female</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" id="btnSelectedGender">Selected Gender</button>
+            </div>
+            <div class="col">
+                <input type="text" value="" id="txtSelectedGender" />
+            </div>
+        </div>
+            <!-- Semester -->
+            <div class="row">
+                  <div class="row">
+                    <h2>Semester</h2>
+                    </div>  
+                <div class="row col-md-12">
+                    <div class="col">
+                        <input type="radio"  name="semester" id="radiosem1" value="Sem - 1" checked/>
+                        <label for="radiosem1">Semester - 1</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio"  name="semester" id="radiosem2" value="Sem - 2"/>
+                        <label for="radiosem2">Semester - 2</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio"  name="semester" id="radiosem3" value="Sem - 3"/>
+                        <label for="radiosem3">Semester - 3</label>
+                    </div>
+                    <div class="col">
+                        <input type="radio"  name="semester" id="radiosem4" value="Sem - 4"/>
+                        <label for="radiosem4">Semester - 4</label>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+                    <div class="col">
+                        <button class="btn btn-primary" id="btnSelectedSem">Selected Semester</button>
+                    </div>
+                    <div class="col">
+                        <input type="text" value="" id="txtSelectedSem" />
+                    </div>
+                </div>
+            </div>  <!--  Semester Ends -->
+            <!--  Subject Starts -->
+            <div class="row">
+                <div class="row">
+                  <h2>Subject</h2>
+                  </div>  
+              <div class="row col-md-12">
+                  <div class="col">
+                      <input type="radio"  name="subject" id="radiophp" value="PHP" checked/>
+                      <label for="radiophp">PHP</label>
+                  </div>
+                  <div class="col">
+                      <input type="radio"  name="subject" id="radiojava" value="Java" />
+                      <label for="radiojava">JAVA</label>
+                  </div>
+                  <div class="col">
+                      <input type="radio"  name="subject" id="radiocsharp" value="C#" />
+                      <label for="radiojava">C#</label>
+                  </div>
+              </div>
+              <div class="row col-md-12">
+                  <div class="col">
+                      <button class="btn btn-primary" id="btnSelectedSub">Selected Subject</button>
+                  </div>
+                  <div class="col">
+                      <input type="text" value="" id="txtSelectedSub" />
+                  </div>
+              </div>
+          </div>  <!--  Subject Ends -->
+          <!-- Combined -->
+          <div class="row col-md-12">
+            <div class="row col-md-12">
+                    <h2>Combined</h2>
+            </div>
+            <div class="col">
+                <button class="btn btn-secondary" id="btnSelectedAll">Selected All</button>
+            </div>
+            <div class="col">
+                <input type="text" value="" id="txtSelectedAll" />
+            </div>
+          </div>
+    </div>
+
+    <script src="RadioButton_01.js"></script>
+</body>
+</html>
