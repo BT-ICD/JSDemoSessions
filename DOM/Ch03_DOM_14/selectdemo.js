@@ -18,15 +18,21 @@ function setSelected(){
     selectEle.value = '2';
 }
 function getSelectedSoaps(){
-    
+    let soap = document.getElementById('soap');
+    let selectedSops = document.getElementById('selectedSops');
+    let selectedData="";
+    let dataOptions = soap.options; 
+
     console.log(soap.length);
-    let dataOptions = soap.options;    
+
     for(let i=0;i<dataOptions.length;i++){
         let opt = dataOptions[i];
         if(opt.selected){
             console.log(opt.value);
+            selectedData+= opt.innerHTML+ ","
         }
     }
+    selectedSops.value =selectedData;
 }
 
 addOptions.addEventListener('click',addOptionsAtRuntime);
